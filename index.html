@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // reverse strings
+      function StrReverse(str) {
+        return str.split('').reverse().join('');
+      }
+
+      // count character
+      function countStr(str) {
+        return str.length;
+      }
+
+      // capitalize first letter of sentence
+      function capitalize(str) {
+        // Turn the sentence to array using split function.
+        sentence = str.split(' ');
+        // Define an empty array to later take the output.
+        let output = [];
+
+        // loop through the array to capitalized the first letter of the sentence
+
+        for (let i = 0; i < sentence.length; i++) {
+          output.push(
+            sentence[i].charAt(0).toUpperCase() + sentence[i].slice(1)
+          );
+        }
+        // return the output
+        return output.join(' ');
+      }
+
+      //   find min and max
+      function findMinAndMax(arr) {
+        const max = Math.max(...arr);
+        const min = Math.min(...arr);
+        return `Min: ${min} and Max: ${max}`;
+      }
+
+      //   Sum array
+      function sumArray(arr) {
+        let sum = 0;
+        arr.forEach((el) => (sum += el));
+        return sum;
+      }
+
+      function filterString(arr) {
+        let str = [];
+        let num = [];
+        arr.forEach((el) => {
+          if (typeof el === 'string') str.push(el);
+          if (typeof el === 'number') num.push(el);
+        });
+        console.log(str);
+        console.log(num);
+
+        return `String: ${str} Number: ${num}`;
+      }
+
+      //   factorization
+      function factorize(numb) {
+        if (numb === 0 || numb === 1) return 1;
+
+        for (let i = numb - 1; i >= 1; i--) {
+          numb *= i;
+        }
+        return numb;
+      }
+
+      function checkPrimeNumber(num) {
+        if (num <= 1) return false;
+        for (let i = 2; i < num; i++) {
+          if (num % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function fibonacci(num) {
+        let num1 = 0;
+        let num2 = 1;
+        let sum;
+        let i = 0;
+        for (i = 0; i < num; i++) {
+          sum = num1 + num2;
+          num1 = num2;
+          num2 = sum;
+        }
+        return num2;
+      }
+    </script>
+  </body>
+</html>
